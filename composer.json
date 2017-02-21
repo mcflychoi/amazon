@@ -1,0 +1,19 @@
+{
+    "name": "mcflychoi/amazon",
+    "description": "Amazon MWS Api",
+    "type": "libray",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cf",
+            "email": "chaifei0515@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+    		"Amazon\\": "src"
+    	}
+    }
+}

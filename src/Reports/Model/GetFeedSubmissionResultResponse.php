@@ -1,0 +1,206 @@
+<?php
+namespace Amazon\Reports\Model;
+/** 
+ *  PHP Version 5
+ *
+ *  @category    Amazon
+ *  @package     MarketplaceWebService
+ *  @copyright   Copyright 2009 Amazon Technologies, Inc.
+ *  @link        http://aws.amazon.com
+ *  @license     http://aws.amazon.com/apache2.0  Apache License, Version 2.0
+ *  @version     2009-01-01
+ */
+/******************************************************************************* 
+
+ *  Marketplace Web Service PHP5 Library
+ *  Generated: Thu May 07 13:07:36 PDT 2009
+ * 
+ */
+
+/**
+ *  @see Amazon\Reports\Model
+ */
+
+use Amazon\Reports\Model; 
+
+    
+
+/**
+ * \Amazon\Reports\Model\GetFeedSubmissionResultResponse
+ * 
+ * Properties:
+ * <ul>
+ * 
+ * <li>GetFeedSubmissionResultResult: \Amazon\Reports\Model\GetFeedSubmissionResultResult</li>
+ * <li>ResponseMetadata: \Amazon\Reports\Model\ResponseMetadata</li>
+ *
+ * </ul>
+ */ 
+class GetFeedSubmissionResultResponse extends Model
+{
+
+
+    /**
+     * Construct new \Amazon\Reports\Model\GetFeedSubmissionResultResponse
+     * 
+     * @param mixed $data DOMElement or Associative Array to construct from. 
+     * 
+     * Valid properties:
+     * <ul>
+     * 
+     * <li>GetFeedSubmissionResultResult: \Amazon\Reports\Model\GetFeedSubmissionResultResult</li>
+     * <li>ResponseMetadata: \Amazon\Reports\Model\ResponseMetadata</li>
+     *
+     * </ul>
+     */
+    public function __construct($data = null)
+    {
+        $this->fields = array 
+        (
+            'GetFeedSubmissionResultResult' => array('FieldValue' => null, 'FieldType' => '\Amazon\Reports\Model\GetFeedSubmissionResultResult'),
+            'ResponseMetadata' => array('FieldValue' => null, 'FieldType' => '\Amazon\Reports\Model\ResponseMetadata'),
+        );
+        parent::__construct($data);
+    }
+
+       
+    /**
+     * Construct \Amazon\Reports\Model\GetFeedSubmissionResultResponse from XML string
+     * 
+     * @param string $xml XML string to construct from
+     * @return \Amazon\Reports\Model\GetFeedSubmissionResultResponse 
+     */
+    public static function fromXML($xml)
+    {
+        $dom = new \DOMDocument();
+        $dom->loadXML($xml);
+        $xpath = new \DOMXPath($dom);
+    	$xpath->registerNamespace('a', 'http://mws.amazonaws.com/doc/2009-01-01/');
+        $response = $xpath->query('//a:GetFeedSubmissionResultResponse');
+        if ($response->length == 1) {
+            return new \Amazon\Reports\Model\GetFeedSubmissionResultResponse(($response->item(0))); 
+        } else {
+            throw new \Exception ("Unable to construct \Amazon\Reports\Model\GetFeedSubmissionResultResponse from provided XML. 
+                                  Make sure that GetFeedSubmissionResultResponse is a root element");
+        }
+          
+    }
+    
+    /**
+     * Gets the value of the GetFeedSubmissionResultResult.
+     * 
+     * @return GetFeedSubmissionResultResult GetFeedSubmissionResultResult
+     */
+    public function getGetFeedSubmissionResultResult() 
+    {
+        return $this->fields['GetFeedSubmissionResultResult']['FieldValue'];
+    }
+
+    /**
+     * Sets the value of the GetFeedSubmissionResultResult.
+     * 
+     * @param GetFeedSubmissionResultResult GetFeedSubmissionResultResult
+     * @return void
+     */
+    public function setGetFeedSubmissionResultResult($value) 
+    {
+        $this->fields['GetFeedSubmissionResultResult']['FieldValue'] = $value;
+        return;
+    }
+
+    /**
+     * Sets the value of the GetFeedSubmissionResultResult  and returns this instance
+     * 
+     * @param GetFeedSubmissionResultResult $value GetFeedSubmissionResultResult
+     * @return \Amazon\Reports\Model\GetFeedSubmissionResultResponse instance
+     */
+    public function withGetFeedSubmissionResultResult($value)
+    {
+        $this->setGetFeedSubmissionResultResult($value);
+        return $this;
+    }
+
+
+    /**
+     * Checks if GetFeedSubmissionResultResult  is set
+     * 
+     * @return bool true if GetFeedSubmissionResultResult property is set
+     */
+    public function isSetGetFeedSubmissionResultResult()
+    {
+        return !is_null($this->fields['GetFeedSubmissionResultResult']['FieldValue']);
+
+    }
+
+    /**
+     * Gets the value of the ResponseMetadata.
+     * 
+     * @return ResponseMetadata ResponseMetadata
+     */
+    public function getResponseMetadata() 
+    {
+        return $this->fields['ResponseMetadata']['FieldValue'];
+    }
+
+    /**
+     * Sets the value of the ResponseMetadata.
+     * 
+     * @param ResponseMetadata ResponseMetadata
+     * @return void
+     */
+    public function setResponseMetadata($value) 
+    {
+        $this->fields['ResponseMetadata']['FieldValue'] = $value;
+        return;
+    }
+
+    /**
+     * Sets the value of the ResponseMetadata  and returns this instance
+     * 
+     * @param ResponseMetadata $value ResponseMetadata
+     * @return \Amazon\Reports\Model\GetFeedSubmissionResultResponse instance
+     */
+    public function withResponseMetadata($value)
+    {
+        $this->setResponseMetadata($value);
+        return $this;
+    }
+
+
+    /**
+     * Checks if ResponseMetadata  is set
+     * 
+     * @return bool true if ResponseMetadata property is set
+     */
+    public function isSetResponseMetadata()
+    {
+        return !is_null($this->fields['ResponseMetadata']['FieldValue']);
+
+    }
+
+
+
+    /**
+     * XML Representation for this object
+     * 
+     * @return string XML for this object
+     */
+    public function toXML() 
+    {
+        $xml = "";
+        $xml .= "<GetFeedSubmissionResultResponse xmlns=\"http://mws.amazonaws.com/doc/2009-01-01/\">";
+        $xml .= $this->_toXMLFragment();
+        $xml .= "</GetFeedSubmissionResultResponse>";
+        return $xml;
+    }
+
+    private $_responseHeaderMetadata = null;
+
+    public function getResponseHeaderMetadata() {
+      return $this->_responseHeaderMetadata;
+    }
+
+    public function setResponseHeaderMetadata($responseHeaderMetadata) {
+      return $this->_responseHeaderMetadata = $responseHeaderMetadata;
+    }
+}
